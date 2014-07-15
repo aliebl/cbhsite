@@ -1,0 +1,105 @@
+<div class="row">
+<div class="col-xs-12 col-md-9" style="border:1px solid black; border-left:0; border-bottom:0; border-top:0">
+<div id="myCarousel" class="carousel slide" style="height:225px;width:100%;">
+
+<!-- Carousel items -->
+<div class="carousel-inner">
+<div class="active item">
+	<div class="carousel-caption">
+		<h4>Label</h4>
+		<p>Comments</p>
+	</div>
+</div>
+<div class="item">
+	<div class="carousel-caption">
+		<h4>Label</h4>
+		<p>Comments</p>
+	</div>
+</div>
+<div class="item">
+<div class="carousel-caption">
+		<h4>Label</h4>
+		<p>Comments</p>
+	</div>
+</div>
+</div>
+<!-- Carousel nav -->
+<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+<div row>
+<a href="/facilities/show" class="thumbnail" style="float:left">
+		<img src="http://placehold.it/270x100" alt="...">
+    </a>
+	<a href="/connect/news_events" class="thumbnail" style="float:left">
+		<img src="http://placehold.it/270x100" alt="...">
+    </a>
+	<a href="/connect/careers" class="thumbnail" style="float:left">
+		<img src="http://placehold.it/270x100" alt="...">
+    </a>
+</div>
+<div style="float:none"></div>
+<h1>Welcome</h1>
+<p>The platypus (Ornithorhynchus anatinus) is a semiaquatic mammal endemic to eastern Australia, including Tasmania. Together with the four species of echidna, it is one of the five extant species of monotremes, the only mammals that lay eggs instead of giving birth. It is the sole living representative of its family (Ornithorhynchidae) and genus (Ornithorhynchus), though a number of related species have been found in the fossil record.
+	The unusual appearance of this egg-laying, duck-billed, beaver-tailed, otter-footed mammal baffled European naturalists when they first encountered it, with some considering it an elaborate hoax. It is one of the few venomous mammals, the male platypus having a spur on the hind foot that delivers a venom capable of causing severe pain to humans. The unique features of the platypus make it an important subject in the study of evolutionary biology and a recognisable and iconic symbol of Australia; it has appeared as a mascot at national events and is featured on the reverse of its 20-cent coin. The platypus is the animal emblem of the state of New South Wales.[3]
+	Until the early 20th century, it was hunted for its fur, but it is now protected throughout its range. Although captive breeding programs have had only limited success and the platypus is vulnerable to the effects of pollution, it is not under any immediate threat.</p>
+
+<p>When the platypus was first encountered by Europeans in 1798, a pelt and sketch were sent back to Great Britain by Captain John Hunter, the second Governor of New South Wales.[4] British scientists' initial hunch was that the attributes were a hoax.[5] George Shaw, who produced the first description of the animal in the Naturalist's Miscellany in 1799, stated it was impossible not to entertain doubts as to its genuine nature, and Robert Knox believed it might have been produced by some Asian taxidermist.[5] It was thought that somebody had sewn a duck's beak onto the body of a beaver-like animal. Shaw even took a pair of scissors to the dried skin to check for stitches.[6]
+	The common name "platypus" is the latinisation of the Greek word πλατύπους (platupous), "flat-footed",[7] from πλατύς (platus), "broad, wide, flat"[8] and πούς (pous), "foot".[9][10] Shaw assigned it as a Linnaean genus name when he initially described it, but the term was quickly discovered to belong already to the wood-boring ambrosia beetle (genus Platypus).[11] It was independently described as Ornithorhynchus paradoxus by Johann Blumenbach in 1800 (from a specimen given to him by Sir Joseph Banks)[12] and following the rules of priority of nomenclature, it was later officially recognised as Ornithorhynchus anatinus.[11] The scientific name Ornithorhynchus anatinus is derived from ορνιθόρυνχος (ornithorhynkhos), which literally means "bird snout" in Greek; and anatinus, which means "duck-like" in Latin.
+	There is no universally agreed plural of "platypus" in the English language. Scientists generally use "platypuses" or simply "platypus". Colloquially, the term "platypi" is also used for the plural, although this is technically incorrect and a form of pseudo-Latin;[6] the correct Greek plural would be "platypodes". Early British settlers called it by many names, such as "watermole", "duckbill", and "duckmole".[6] The name platypus is often prefixed with the adjective "duck-billed" to form duck-billed platypus, which distinguishes the modern platypus from the extinct Riversleigh platypuses.[13]</p>
+</div>
+
+
+<div class="col-xs-6 col-md-3">
+	<div class="phone">
+		<h3 style="text-align:right;margin-top: -5px;">
+		<br>
+			Clara Barton Hospital<br>
+			</h3>
+	</div>
+	<div class="address">
+		<p style="text-align:right; margin-top: -10px;">
+		<b>(620) 653-2114</b><br>
+			250 West Ninth Street <br>
+			Hoisington, KS 67544 <br>
+    </div>
+	
+	<div class="phonec">
+		<h3 style="text-align:right;margin-top: -5px;">
+			Medical Clinic<br>
+			</h3>
+	</div>
+	<div class="addressc">
+		<p style="text-align:right; margin-top: -10px;">
+		<b>(620) 653-2386</b> <br>
+			252 West Ninth Street <br>
+			Hoisington, KS 67544 <br>
+			<a target="_blank" href="https://www.google.com/maps/place/Clara+Barton+Hospital/@38.522164,-98.778754,17z/data=!3m1!4b1!4m2!3m1!1s0x0:0x8e9b5bd305e55659">Directions</a>
+    </div>
+	
+	<div id="events">
+  <h2 id="month">
+    <%= link_to "<<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">>", date: @date.next_month %>
+  </h2>
+  <%= calendar @date do |date| %>
+      <%= date.day %>
+        
+        
+  <% end %>
+</div>
+	
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    if(window.location.href.indexOf("/") > 0) {
+		$("a").parent().removeClass("active");
+		document.getElementById("home").className += "active";
+    }
+});
+
+
+</script>

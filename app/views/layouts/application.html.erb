@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clara Barton Hospital</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="cbh-header" >
+	<div class="container" style="padding-left:0;padding-right:0">
+	<a href="http://localhost:3000/"><img src="/assets/cbhlogo.jpg" alt="some_text" width="100%" height="200px" ></a>
+		<div class="cbh-lgo">
+		
+		</div>
+	</div>
+</div>
+
+<%= render "/layouts/navbar" %>
+
+<div class="container" style="top:-60px; border:1px solid black">
+<%= yield %>
+</div>
+
+<%= render "/layouts/footer" %>
+</body>
+</html>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    if(window.location.href.indexOf("hospital") > 0) {
+		$("a").parent().removeClass("active");
+		document.getElementById("hos").className += "active";
+    }
+	if(window.location.href.indexOf("medical_clinic") > 0) {
+		$("a").parent().removeClass("active");
+		document.getElementById("mc").className += "active";
+    }
+	if(window.location.href.indexOf("surgical_services") > 0) {
+		$("a").parent().removeClass("active");
+		document.getElementById("ss").className += "active";
+    }
+	if(window.location.href.indexOf("hospital") > 0) {
+		$("a").parent().removeClass("active");
+		document.getElementById("hos").className += "active";
+    }
+});
+</script>

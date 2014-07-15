@@ -1,0 +1,141 @@
+<script type="text/javascript">
+$(function(){
+    $(':radio').change(function() {
+        var test = $(this).val();
+		if(test == "option1"){
+			document.getElementById('physicians').style.display = "block";
+			document.getElementById('surgeons').style.display = "none";
+			document.getElementById('midlevel').style.display = "none";
+			document.getElementById('outreach').style.display = "none";
+		}
+		if(test == "option2"){
+			document.getElementById('physicians').style.display = "none";
+			document.getElementById('surgeons').style.display = "block";
+			document.getElementById('midlevel').style.display = "none";
+			document.getElementById('outreach').style.display = "none";
+		}
+		if(test == "option3"){
+			document.getElementById('physicians').style.display = "none";
+			document.getElementById('surgeons').style.display = "none";
+			document.getElementById('midlevel').style.display = "block";
+			document.getElementById('outreach').style.display = "none";
+		}
+		if(test == "option4"){
+			document.getElementById('physicians').style.display = "none";
+			document.getElementById('surgeons').style.display = "none";
+			document.getElementById('midlevel').style.display = "none";
+			document.getElementById('outreach').style.display = "block";
+		}
+		if(test == "option0"){
+			document.getElementById('physicians').style.display = "block";
+			document.getElementById('surgeons').style.display = "block";
+			document.getElementById('midlevel').style.display = "block";
+			document.getElementById('outreach').style.display = "block";
+		}	
+	})
+});
+	
+	$(document).on("click", ".open-docModal", function () {
+		var docTitle = $(this).data('title');
+		var docInfo = $(this).data('info');
+		var docField = $(this).data('field');
+		var docName = $(this).data('name');
+		var docPic = $(this).data('pic');
+		var docSrc = $(this).attr('src');
+		$(".modal-body #modalTitle").val( docTitle);
+		$(".modal-body #modalInfo").val( docInfo);
+		$(".modal-body #modalField").val( docField);
+		$(".modal-body #modalName").val( docName);
+		$(".modal-body .modalPic").attr( 'src', docSrc);
+	});
+</script>
+
+
+<h1>Medical Staff</h1>
+<div id="radio" class="radiob" data-toggle="buttons"  style="width:770px; margin-left: auto; margin-right:auto">
+	<label class="radiob btn btn-primary " style="padding-top:0px;width: 150px; height: 20px;">
+		<input type="radio" name="radiob" class="radiob" data-toggle="radio" value="option0" checked> All
+	</label>
+	<label class="radiob btn btn-primary" style="padding-top:0px;width: 150px; height: 20px;">
+		<input type="radio" name="radiob" class="radiob" data-toggle="radio" value="option1"> Physicians
+	</label>
+	<label class="radiob btn btn-primary" style="padding-top:0px;width: 150px; height: 20px;">
+		<input type="radio" name="radiob" class="radiob" data-toggle="radio" value="option2"> Surgeons
+	</label>
+	<label class="radiob btn btn-primary" style="padding-top:0px;width: 150px; height: 20px;">
+		<input type="radio" name="radiob" class="radiob" data-toggle="radio" value="option3"> Mid-Level
+	</label>
+	<label class="radiob btn  btn-primary" style="padding-top:0px; width: 150px; height: 20px;">
+		<input type="radio" name="radiob" class="radiob" data-toggle="radio" value="option4"> Outreach
+	</label>
+</div>
+<br>
+<div class="photos" id="staffphotos" style="text-align:center; width:1140px;margin-left: 15px;">
+	<div id="physicians">
+		<% @staffs.each do |staff| %>
+			<% if staff.pos == "Physician" %>
+				<div  style="cursor:pointer; float:left; margin-left: 10px;margin-right:10px;margin-bottom:10px">
+					<a><img src="http://placehold.it/180x180" alt="..." class="open-docModal" data-toggle="modal" data-target="#myModal" data-name="<%= staff.name %>" data-title="<%= staff.title %>" data-field="<%= staff.field %>" data-info="<%= staff.info %>" ></a><br>
+					<%= staff.name %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<div id="surgeons">
+		<% @staffs.each do |staff| %>
+			<% if staff.pos == "Surgeon" %>
+				<div  style="cursor:pointer;float:left; margin-left: 10px;margin-right:10px;margin-bottom:10px">
+					<a><img src="http://placehold.it/180x180" alt="..." class="open-docModal" data-toggle="modal" data-target="#myModal" data-name="<%= staff.name %>" data-title="<%= staff.title %>" data-field="<%= staff.field %>" data-info="<%= staff.info %>"  ></a><br>
+					<%= staff.name %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<div id="midlevel">
+		<% @staffs.each do |staff| %>
+			<% if staff.pos == "Mid-Level" %>
+				<div style="cursor:pointer; float:left; margin-left: 10px;margin-right:10px;margin-bottom:10px">
+					<a><img src="http://placehold.it/180x180" alt="..." class="open-docModal" data-toggle="modal" data-target="#myModal" data-name="<%= staff.name %>" data-title="<%= staff.title %>" data-field="<%= staff.field %>" data-info="<%= staff.info %>"  ></a><br>
+					<%= staff.name %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<div id="outreach">
+		<% @staffs.each do |staff| %>
+			<% if staff.pos == "Outreach" %>
+				<div style="cursor:pointer;float:left; margin-left: 10px;margin-right:10px;margin-bottom:10px;">
+					<a><img src="http://placehold.it/180x180" alt="..." class="open-docModal" data-toggle="modal" data-target="#myModal" data-name="<%= staff.name %>" data-title="<%= staff.title %>" data-field="<%= staff.field %>" data-info="<%= staff.info %>"  ></a><br>
+					<%= staff.name %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" name="ModalTitle" id="ModalTitle"></h4>
+      </div>
+      <div class="modal-body">
+		<div class="col-xs-6 col-md-4" style="margin-left:50px">
+			<img src="" class="modalPic">
+		</div>
+		<div class="col-xs-6 col-md-4" >
+			<input type="text" name="modalName" id="modalName" value="" disabled style="font-size:20px;border:none; background: transparent"/><br>
+			<input type="text" name="modalTitle" id="modalTitle" value="" disabled style="border:none; background: transparent"/><br>
+			<input type="text" name="modalField" id="modalField" value="" disabled style="border:none; background: transparent"/><br>
+			<input type="text" name="modalInfo" id="modalInfo" value="" disabled style="border:none; background: transparent"/>
+		</div>
+		<div style="clear:both"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,319 @@
+<!------------- Places Navbar --->
+
+  <div class="container" >	
+      <ul class="tabrow" style="margin-left:90px;role="tablist" >
+	  <li id="home" class="active"><a href="/" class="home, navbar-brand">HOME<br><br> </a></li>
+	    <li id="hos"><a href="/hospital/services" class="hos, navbar-brand">HOSPITAL<br><br> </a></li>
+		<li id="mc"><a href="/medical_clinic/services" class="mc, navbar-brand">MEDICAL <br> CLINIC</a></li>
+		<li id="ss"><a href="/surgical_services/services" class="ss, navbar-brand">SURGICAL <br> SERVICES</a></li>
+		<li id="sso"><a href="/facilities/show" class="sso, navbar-brand">SURGICAL SERVICES <br> ORTHO</a></li>
+		<li id="rfmc"><a href="/russel_family_clinic/services" class="rfmc, navbar-brand">RUSSEL FAMILY<br>CLINIC</a></li>
+		<li id="so"><a href="/specialty_outreach/services" class="so, navbar-brand">SPECIALTY <br> OUTREACH</a></li>
+	  <ul>
+  </div>
+
+<!------------ services/team/patients navbar ----------->
+
+
+<div class="container" style="height:51px;padding-right:0; padding-left:0; border:1px solid black; border-bottom:0; border-top:0;">	
+
+<% if params[:controller] == "welcome" || params[:controller] == "connect" || params[:controller] == "foundation" ||params[:controller] == "staff" %>
+
+<div class="navbar navbar-default navbar-static-top"  role="navigation" style="border:1px solid #266937;border-bottom:0;border-right:0;border-left:0">
+    <div class="navbar-collapse collapse" style=" margin-left: auto; margin-right:auto">
+      <ul class="nav navtop navbar-nav" >
+		<li ><a href="/staff/medical" class="navbar-brand">Our Team</a></li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">For Our Patients <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Testimonials', patients_testimonials_path%></li>
+                    <li><%= link_to 'Forms', patients_forms_path%></li>
+                    <li><%= link_to 'Tour', patients_tour_path%></li>
+					<li><%= link_to 'Insurance & Billing', patients_billing_path%></li>
+                    <li><%= link_to 'Online Bill Pay', patients_onlinepay_path%></li>
+					<li><%= link_to 'Patient Portal', patients_patientportal_path%></li>
+				</ul>
+		</li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">Connect <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Careers', connect_careers_path%></li>
+                    <li><%= link_to 'Auxiliary', connect_auxiliary_path%></li>
+                    <li><%= link_to 'News & Events', connect_news_events_path%></li>
+                    <li><%= link_to 'Donate', connect_donate_path%></li>
+                    <li><%= link_to 'About Us', connect_about_us_path%></li>
+                    <li><%= link_to 'Community', connect_community_path%></li>
+                    <li><%= link_to 'Contact', contacts_path%></li>
+
+				</ul>
+		</li>	
+		<li>
+			<a href="#" class=" dropdown-toggle, navbar-brand" data-toggle="dropdown">Foundation <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Gifts', foundation_gifts_path%></li>
+                    <li><%= link_to 'Scholarships', foundation_scholarship_path%></li>
+                    <li><%= link_to 'Membership', foundation_membership_path%></li>
+                    <li><%= link_to 'Board', foundation_board_path%></li>
+                    <li><%= link_to 'Giving', foundation_giving_path%></li>
+                    <li><%= link_to 'Guardian Angel', foundation_guardian_angel_path%></li>
+                    <li><%= link_to 'Annual Benefit', foundation_annual_benefit_path%></li>
+                    <li><%= link_to 'Donate', foundation_donate_path%></li>
+				</ul>
+		</li>
+		</div>
+	</div>
+</div>
+
+<% end %>
+
+<% if params[:controller] == "hospital" %>
+<div class="navbar navbar-default navbar-static-top"  role="navigation" style="border:1px solid #266937;border-bottom:0;border-right:0;border-left:0">
+    <div class="navbar-collapse collapse" style=" margin-left: auto; margin-right:auto">
+      <ul class="nav navtop navbar-nav" >
+		<li><a href="/hospital/services" class=" navbar-brand">Our Services</a></li>
+		<li ><a href="/hospital/team" class="navbar-brand">Our Team</a></li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">For Our Patients <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Testimonials', patients_testimonials_path%></li>
+                    <li><%= link_to 'Forms', patients_forms_path%></li>
+                    <li><%= link_to 'Tour', patients_tour_path%></li>
+					<li><%= link_to 'Insurance & Billing', patients_billing_path%></li>
+                    <li><%= link_to 'Online Bill Pay', patients_onlinepay_path%></li>
+					<li><%= link_to 'Patient Portal', patients_patientportal_path%></li>
+				</ul>
+		</li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">Connect <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Careers', connect_careers_path%></li>
+                    <li><%= link_to 'Auxiliary', connect_auxiliary_path%></li>
+                    <li><%= link_to 'News & Events', connect_news_events_path%></li>
+                    <li><%= link_to 'Donate', connect_donate_path%></li>
+                    <li><%= link_to 'About Us', connect_about_us_path%></li>
+                    <li><%= link_to 'Community', connect_community_path%></li>
+                    <li><%= link_to 'Contact', contacts_path%></li>
+
+				</ul>
+		</li>	
+		<li>
+			<a href="#" class=" dropdown-toggle, navbar-brand" data-toggle="dropdown">Foundation <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Gifts', foundation_gifts_path%></li>
+                    <li><%= link_to 'Scholarships', foundation_scholarship_path%></li>
+                    <li><%= link_to 'Membership', foundation_membership_path%></li>
+                    <li><%= link_to 'Board', foundation_board_path%></li>
+                    <li><%= link_to 'Giving', foundation_giving_path%></li>
+                    <li><%= link_to 'Guardian Angel', foundation_guardian_angel_path%></li>
+                    <li><%= link_to 'Annual Benefit', foundation_annual_benefit_path%></li>
+                    <li><%= link_to 'Donate', foundation_donate_path%></li>
+				</ul>
+		</li>
+		</div>
+	</div>
+</div>
+<% end %>
+
+
+<% if params[:controller] == "medical_clinic" %>
+<div class="navbar navbar-default navbar-static-top"  role="navigation" style="border:1px solid #266937;border-bottom:0;border-right:0;border-left:0">
+    <div class="navbar-collapse collapse" style=" margin-left: auto; margin-right:auto">
+      <ul class="nav navtop navbar-nav" >
+		<li ><a href="/medical_clinic/services" class="navbar-brand">Our Services</a></li>
+		<li ><a href="/medical_clinic/team" class="navbar-brand">Our Team</a></li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">For Our Patients <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Testimonials', patients_testimonials_path%></li>
+                    <li><%= link_to 'Forms', patients_forms_path%></li>
+                    <li><%= link_to 'Tour', patients_tour_path%></li>
+					<li><%= link_to 'Insurance & Billing', patients_billing_path%></li>
+                    <li><%= link_to 'Online Bill Pay', patients_onlinepay_path%></li>
+					<li><%= link_to 'Patient Portal', patients_patientportal_path%></li>
+				</ul>
+		</li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">Connect <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Careers', connect_careers_path%></li>
+                    <li><%= link_to 'Auxiliary', connect_auxiliary_path%></li>
+                    <li><%= link_to 'News & Events', connect_news_events_path%></li>
+                    <li><%= link_to 'Donate', connect_donate_path%></li>
+                    <li><%= link_to 'About Us', connect_about_us_path%></li>
+                    <li><%= link_to 'Community', connect_community_path%></li>
+                    <li><%= link_to 'Contact', contacts_path%></li>
+
+				</ul>
+		</li>	
+		<li>
+			<a href="#" class=" dropdown-toggle, navbar-brand" data-toggle="dropdown">Foundation <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Gifts', foundation_gifts_path%></li>
+                    <li><%= link_to 'Scholarships', foundation_scholarship_path%></li>
+                    <li><%= link_to 'Membership', foundation_membership_path%></li>
+                    <li><%= link_to 'Board', foundation_board_path%></li>
+                    <li><%= link_to 'Giving', foundation_giving_path%></li>
+                    <li><%= link_to 'Guardian Angel', foundation_guardian_angel_path%></li>
+                    <li><%= link_to 'Annual Benefit', foundation_annual_benefit_path%></li>
+                    <li><%= link_to 'Donate', foundation_donate_path%></li>
+				</ul>
+		</li>
+		</div>
+	</div>
+</div>
+<%end%>
+
+
+<% if params[:controller] == "surgical_services" %>
+<div class="navbar navbar-default navbar-static-top"  role="navigation" style="border:1px solid #266937;border-bottom:0;border-right:0;border-left:0">
+    <div class="navbar-collapse collapse" style=" margin-left: auto; margin-right:auto">
+      <ul class="nav navtop navbar-nav" >
+		<li ><a href="/surgical_services/services" class="navbar-brand">Our Services</a></li>
+		<li ><a href="/surgical_services/team" class="navbar-brand">Our Team</a></li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">For Our Patients <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Testimonials', patients_testimonials_path%></li>
+                    <li><%= link_to 'Forms', patients_forms_path%></li>
+                    <li><%= link_to 'Tour', patients_tour_path%></li>
+					<li><%= link_to 'Insurance & Billing', patients_billing_path%></li>
+                    <li><%= link_to 'Online Bill Pay', patients_onlinepay_path%></li>
+					<li><%= link_to 'Patient Portal', patients_patientportal_path%></li>
+				</ul>
+		</li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">Connect <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Careers', connect_careers_path%></li>
+                    <li><%= link_to 'Auxiliary', connect_auxiliary_path%></li>
+                    <li><%= link_to 'News & Events', connect_news_events_path%></li>
+                    <li><%= link_to 'Donate', connect_donate_path%></li>
+                    <li><%= link_to 'About Us', connect_about_us_path%></li>
+                    <li><%= link_to 'Community', connect_community_path%></li>
+                    <li><%= link_to 'Contact', contacts_path%></li>
+
+				</ul>
+		</li>	
+		<li>
+			<a href="#" class=" dropdown-toggle, navbar-brand" data-toggle="dropdown">Foundation <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Gifts', foundation_gifts_path%></li>
+                    <li><%= link_to 'Scholarships', foundation_scholarship_path%></li>
+                    <li><%= link_to 'Membership', foundation_membership_path%></li>
+                    <li><%= link_to 'Board', foundation_board_path%></li>
+                    <li><%= link_to 'Giving', foundation_giving_path%></li>
+                    <li><%= link_to 'Guardian Angel', foundation_guardian_angel_path%></li>
+                    <li><%= link_to 'Annual Benefit', foundation_annual_benefit_path%></li>
+                    <li><%= link_to 'Donate', foundation_donate_path%></li>
+				</ul>
+		</li>
+		</div>
+	</div>
+</div>
+<%end%>
+
+<% if params[:controller] == "russel_family_clinic" %>
+<div class="navbar navbar-default navbar-static-top"  role="navigation" style="border:1px solid #266937;border-bottom:0;border-right:0;border-left:0">
+    <div class="navbar-collapse collapse" style=" margin-left: auto; margin-right:auto">
+      <ul class="nav navtop navbar-nav" >
+		<li ><a href="/russel_family_clinic/services" class="navbar-brand">Our Services</a></li>
+		<li ><a href="/russel_family_clinic/team" class="navbar-brand">Our Team</a></li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">For Our Patients <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Testimonials', patients_testimonials_path%></li>
+                    <li><%= link_to 'Forms', patients_forms_path%></li>
+                    <li><%= link_to 'Tour', patients_tour_path%></li>
+					<li><%= link_to 'Insurance & Billing', patients_billing_path%></li>
+                    <li><%= link_to 'Online Bill Pay', patients_onlinepay_path%></li>
+					<li><%= link_to 'Patient Portal', patients_patientportal_path%></li>
+				</ul>
+		</li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">Connect <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Careers', connect_careers_path%></li>
+                    <li><%= link_to 'Auxiliary', connect_auxiliary_path%></li>
+                    <li><%= link_to 'News & Events', connect_news_events_path%></li>
+                    <li><%= link_to 'Donate', connect_donate_path%></li>
+                    <li><%= link_to 'About Us', connect_about_us_path%></li>
+                    <li><%= link_to 'Community', connect_community_path%></li>
+                    <li><%= link_to 'Contact', contacts_path%></li>
+
+				</ul>
+		</li>	
+		<li>
+			<a href="#" class=" dropdown-toggle, navbar-brand" data-toggle="dropdown">Foundation <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Gifts', foundation_gifts_path%></li>
+                    <li><%= link_to 'Scholarships', foundation_scholarship_path%></li>
+                    <li><%= link_to 'Membership', foundation_membership_path%></li>
+                    <li><%= link_to 'Board', foundation_board_path%></li>
+                    <li><%= link_to 'Giving', foundation_giving_path%></li>
+                    <li><%= link_to 'Guardian Angel', foundation_guardian_angel_path%></li>
+                    <li><%= link_to 'Annual Benefit', foundation_annual_benefit_path%></li>
+                    <li><%= link_to 'Donate', foundation_donate_path%></li>
+				</ul>
+		</li>
+		</div>
+	</div>
+</div>
+<%end%>
+
+
+<% if params[:controller] == "specialty_outreach" %>
+<div class="navbar navbar-default navbar-static-top"  role="navigation" style="border:1px solid #266937;border-bottom:0;border-right:0;border-left:0">
+    <div class="navbar-collapse collapse" style=" margin-left: auto; margin-right:auto">
+      <ul class="nav navtop navbar-nav" >
+		<li ><a href="/specialty_outreach/services" class="navbar-brand">Our Services</a></li>
+		<li ><a href="/specialty_outreach/team" class="navbar-brand">Our Team</a></li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">For Our Patients <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Testimonials', patients_testimonials_path%></li>
+                    <li><%= link_to 'Forms', patients_forms_path%></li>
+                    <li><%= link_to 'Tour', patients_tour_path%></li>
+					<li><%= link_to 'Insurance & Billing', patients_billing_path%></li>
+                    <li><%= link_to 'Online Bill Pay', patients_onlinepay_path%></li>
+					<li><%= link_to 'Patient Portal', patients_patientportal_path%></li>
+				</ul>
+		</li>
+		<li>
+			<a href="#" class="dropdown-toggle, navbar-brand" data-toggle="dropdown">Connect <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Careers', connect_careers_path%></li>
+                    <li><%= link_to 'Auxiliary', connect_auxiliary_path%></li>
+                    <li><%= link_to 'News & Events', connect_news_events_path%></li>
+                    <li><%= link_to 'Donate', connect_donate_path%></li>
+                    <li><%= link_to 'About Us', connect_about_us_path%></li>
+                    <li><%= link_to 'Community', connect_community_path%></li>
+                    <li><%= link_to 'Contact', contacts_path%></li>
+
+				</ul>
+		</li>	
+		<li>
+			<a href="#" class=" dropdown-toggle, navbar-brand" data-toggle="dropdown">Foundation <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Gifts', foundation_gifts_path%></li>
+                    <li><%= link_to 'Scholarships', foundation_scholarship_path%></li>
+                    <li><%= link_to 'Membership', foundation_membership_path%></li>
+                    <li><%= link_to 'Board', foundation_board_path%></li>
+                    <li><%= link_to 'Giving', foundation_giving_path%></li>
+                    <li><%= link_to 'Guardian Angel', foundation_guardian_angel_path%></li>
+                    <li><%= link_to 'Annual Benefit', foundation_annual_benefit_path%></li>
+                    <li><%= link_to 'Donate', foundation_donate_path%></li>
+				</ul>
+		</li>
+		</div>
+	</div>
+</div>
+<%end%>
+</div>
+
+<script type="text/javascript">
+$("a").click(function(e) {
+
+  $("a").parent().removeClass("active");
+  $(this).parent().addClass("active");
+});
+</script>

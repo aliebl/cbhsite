@@ -1,0 +1,45 @@
+<h1>Contact Us</h1>
+<p>We want to hear from you!</p>
+
+<p>If you have any questions, comments, or concerns regarding Clara Barton Hospital, our clinics, services, or this web site, please let us know.</p>
+
+<%= form_for :connect do |f| %>
+	<div style="float:left">
+		<%= f.label :first_name %><br>
+		<%= f.text_field :first, :required => true  %>
+		<br><br>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;&nbsp;
+		<%= f.label :last_name %><br>
+		&nbsp;&nbsp;&nbsp;
+		<%= f.text_field :last, :required => true %>
+		<br><br>
+	</div>
+	
+	<div style="clear:both"></div>
+	<div style="float:left">
+		<%= f.label :email %><br>
+		<%= f.text_field :email, :required => true %>
+	</div>
+  
+	<div>
+		&nbsp;&nbsp;&nbsp;
+		<%= f.label :phone %><br>
+		&nbsp;&nbsp;&nbsp;
+		<%= f.text_field :phone %>
+		<br><br>
+	</div>
+  
+	<div style="clear:both">
+		<%= f.label :message %><br>
+		<%= f.text_area :message, :size => "40x5" %>
+	</div>
+	<div class= "hidden">
+      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+    </div>
+	<p>
+		<%= f.submit :Send %>
+	</p>
+<% end %>

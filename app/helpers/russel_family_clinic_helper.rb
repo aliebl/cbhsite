@@ -1,0 +1,2 @@
+module RusselFamilyClinicHelper
+end

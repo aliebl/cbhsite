@@ -1,0 +1,2 @@
+module SpecialtyOutreachHelper
+end
